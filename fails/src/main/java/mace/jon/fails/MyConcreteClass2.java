@@ -1,5 +1,7 @@
 package mace.jon.fails;
 
-public class MyConcreteClass extends MyAbstractClass {
+import mace.jon.succeeds.MyAbstractClass;
+
+public class MyConcreteClass2 extends MyAbstractClass {
 
 }
