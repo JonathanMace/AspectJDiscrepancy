@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mace.jon</groupId>
+	<artifactId>aspects</artifactId>
+	<packaging>jar</packaging>
+
+	<name>AspectJ Discrepancy - Aspects Library</name>
+
+	<parent>
+		<groupId>mace.jon</groupId>
+		<artifactId>discrepancy-project</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>compile</id>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<sources>
+						<source>
+							<basedir>${basedir}/src/main/aspect</basedir>
+							<includes>
+								<include>mace/jon/aspects/*.aj</include>
+							</includes>
+						</source>
+					</sources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<id>include-protobuf-generated-test-source</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>eclipse</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<ajdtVersion>1.8.7</ajdtVersion>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
