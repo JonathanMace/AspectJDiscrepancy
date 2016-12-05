@@ -23,13 +23,13 @@ public class TestMethodsAreImplemented extends TestCase {
 	@Test
 	public void testMethodsAreImplemented1() throws NoSuchMethodException, SecurityException {
 		Method m = AbstractClassWithAnnotation.class.getMethod("count");
-		assertFalse(Modifier.isAbstract(m.getModifiers()));
+		assertFalse("Abstract class should have woven interface implemented", Modifier.isAbstract(m.getModifiers()));
 	}
 	
 	@Test
 	public void testMethodsAreImplemented2() throws NoSuchMethodException, SecurityException {
 		Method m = AbstractClassWithoutAnnotation.class.getMethod("count");
-		assertFalse(Modifier.isAbstract(m.getModifiers()));
+		assertFalse("Abstract class should have woven interface implemented", Modifier.isAbstract(m.getModifiers()));
 	}
 
 }
