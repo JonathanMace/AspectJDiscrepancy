@@ -10,6 +10,7 @@
 
     <modules>
         <module>aspects</module>
+        <module>base</module>
         <module>succeeds</module>
         <module>fails</module>
     </modules>

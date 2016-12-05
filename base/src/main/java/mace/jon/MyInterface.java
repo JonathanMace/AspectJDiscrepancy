@@ -1,4 +1,4 @@
-package mace.jon.succeeds;
+package mace.jon;
 
 import mace.jon.Annotations.ShouldDoWeave;
 

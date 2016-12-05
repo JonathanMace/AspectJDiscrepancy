@@ -21,7 +21,7 @@
 		</dependency>
 		<dependency>
 			<groupId>mace.jon</groupId>
-			<artifactId>succeeds</artifactId>
+			<artifactId>base</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>

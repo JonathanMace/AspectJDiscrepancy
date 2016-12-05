@@ -1,16 +1,16 @@
-package mace.jon.succeeds;
+package mace.jon.fails;
 
 import org.junit.Test;
 
 import junit.framework.TestCase;
 import mace.jon.aspects.MatchAnnotation.MyAspectAddedInterface;
-import mace.jon.fails.MyConcreteClass2;
+import mace.jon.fails.ConcreteClassFails;
 
 public class TestWeaveSuccess extends TestCase {
 	
 	@Test
 	public void testWeaveDidHappen() {
-		MyConcreteClass2 cls = new MyConcreteClass2();
+		ConcreteClassFails cls = new ConcreteClassFails();
 		assertTrue(cls instanceof MyAspectAddedInterface);
 	}
 
